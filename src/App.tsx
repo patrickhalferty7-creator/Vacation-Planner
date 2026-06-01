@@ -22,7 +22,6 @@ const initialFilters: Filters = {
   minMustDo: 1,
   minTeenAppeal: 1,
   rainyDayOnly: false,
-  grandparentFriendlyOnly: false,
   effortLevels: [],
   wineCider: false,
   waterActivities: false,
@@ -79,12 +78,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-coast-shell">
-      <header className="sticky top-0 z-[1000] border-b border-coast-blue/10 bg-coast-shell/90 backdrop-blur">
+    <div className="min-h-screen bg-coast-shell text-coast-slate">
+      <header className="sticky top-0 z-[1000] border-b border-coast-blue/10 bg-coast-shell/88 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-          <a href="#overview" className="flex items-center gap-2 font-black text-coast-slate">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-coast-blue text-white">P</span>
-            Pornic Planner
+          <a href="#overview" className="flex items-center gap-3 font-black text-coast-ink">
+            <span className="grid h-9 w-9 place-items-center rounded-sm bg-coast-ink font-display text-white">P</span>
+            <span className="leading-tight">
+              Pornic
+              <span className="block text-[10px] uppercase tracking-[0.24em] text-coast-coral">Atlantic guide</span>
+            </span>
           </a>
           <div className="hidden flex-wrap items-center gap-2 md:flex">
             <NavLink href="#top-10">Top 10</NavLink>
@@ -96,7 +98,7 @@ function App() {
           </div>
           <a
             href="#shortlist"
-            className="inline-flex items-center gap-2 rounded-md bg-coast-coral px-3 py-2 text-sm font-black text-white"
+            className="inline-flex items-center gap-2 rounded-sm bg-coast-coral px-3 py-2 text-sm font-black text-white shadow-sm"
           >
             <Heart className="h-4 w-4 fill-current" />
             {shortlistIds.length}
@@ -113,19 +115,24 @@ function App() {
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="hero-image-mask absolute inset-0" />
-            <div className="relative mx-auto grid min-h-[72vh] max-w-7xl items-end px-4 py-12 md:py-16">
-              <div className="max-w-3xl pb-8 text-white">
+            <div className="relative mx-auto grid min-h-[78vh] max-w-7xl items-end px-4 py-12 md:py-16">
+              <div className="max-w-4xl pb-10 text-white">
                 <Badge tone="sand">Home base: Pornic, France</Badge>
-                <h1 className="mt-5 text-5xl font-black leading-[1.02] md:text-7xl">Pornic Family Trip Planner</h1>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/88">
-                  A visual planning app for a multi-generational group of 10 to browse, filter, compare, and shortlist
-                  coastal towns, water days, wine, history, art, shopping, and teen-friendly adventures within roughly a
-                  3-hour drive of Pornic.
+                <p className="mt-5 text-xs font-black uppercase tracking-[0.28em] text-coast-sand/90">
+                  Ten travelers. One Atlantic base. No wasted drives.
+                </p>
+                <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-[0.98] md:text-7xl">
+                  Pornic Family Trip Planner
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 md:text-xl">
+                  A curated coastal field guide for choosing the days that feel worth it: island bike rides, private
+                  fishing mornings, show-stopping history, Muscadet lunches, stylish city browsing, and big Atlantic
+                  scenery, all measured from Pornic.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <HeroCta href="#top-10" icon={<Sparkles className="h-4 w-4" />} label="Browse Top 10" />
-                  <HeroCta href="#map" icon={<Map className="h-4 w-4" />} label="View Map" />
-                  <HeroCta href="#explorer" icon={<Search className="h-4 w-4" />} label="Explore All Activities" />
+                  <HeroCta href="#top-10" icon={<Sparkles className="h-4 w-4" />} label="See the Top 10" />
+                  <HeroCta href="#map" icon={<Map className="h-4 w-4" />} label="Open the Map" />
+                  <HeroCta href="#explorer" icon={<Search className="h-4 w-4" />} label="Browse the Guide" />
                 </div>
               </div>
             </div>
@@ -134,27 +141,27 @@ function App() {
           <div className="relative z-10 mx-auto -mt-8 grid max-w-7xl gap-3 px-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard
               icon={<Compass className="h-5 w-5" />}
-              label="Activities"
+              label="Field guide"
               value={activities.length.toString()}
-              detail="Seeded local database"
+              detail="Curated activities from Pornic"
             />
             <StatCard
               icon={<Route className="h-5 w-5" />}
-              label="Closest activity"
+              label="First stroll"
               value={closestActivity.driveTimeLabel}
               detail={`${closestActivity.name} · ${formatDriveBadge(closestActivity)}`}
             />
             <StatCard
               icon={<Map className="h-5 w-5" />}
-              label="Furthest top pick"
+              label="Signature big day"
               value={furthestTopTen.driveTimeLabel}
               detail={furthestTopTen.name}
             />
             <StatCard
               icon={<Users className="h-5 w-5" />}
-              label="Categories"
+              label="Interests covered"
               value={allCategories.length.toString()}
-              detail="Water, wine, teen, history, art, food"
+              detail="Water, wine, teens, history, art, food"
             />
           </div>
         </section>
@@ -191,7 +198,7 @@ function App() {
             {!filteredActivities.length ? (
               <div className="mt-6 rounded-lg border border-coast-blue/12 bg-white p-8 text-center shadow-sm">
                 <p className="text-xl font-black text-coast-slate">No activities match this filter mix.</p>
-                <p className="mt-2 text-coast-slate/65">Loosen a drive-time or score filter and the cards and map will update together.</p>
+                <p className="mt-2 text-coast-slate/65">Loosen a drive-time or score filter and the guide will open back up.</p>
               </div>
             ) : null}
           </section>
@@ -220,7 +227,7 @@ function App() {
       <footer className="mt-10 border-t border-coast-blue/10 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-6 text-sm leading-6 text-coast-slate/65">
           Drive times and distances are planning estimates from Pornic and should be checked before booking or departure.
-          The app keeps those estimates visible in every planning view so the group can decide quickly.
+          Every view keeps the drive visible, because beautiful days are easier to choose when the car time is honest.
         </div>
       </footer>
 
@@ -236,7 +243,7 @@ function App() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a className="rounded-md px-3 py-2 text-sm font-bold text-coast-slate/72 transition hover:bg-white hover:text-coast-deep" href={href}>
+    <a className="rounded-sm px-3 py-2 text-sm font-bold text-coast-slate/72 transition hover:bg-white hover:text-coast-deep" href={href}>
       {children}
     </a>
   );
@@ -246,7 +253,7 @@ function HeroCta({ href, icon, label }: { href: string; icon: React.ReactNode; l
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-3 text-sm font-black text-coast-deep shadow-lg transition hover:-translate-y-0.5 hover:bg-coast-foam"
+      className="inline-flex items-center gap-2 rounded-sm bg-white px-4 py-3 text-sm font-black text-coast-deep shadow-lg transition hover:-translate-y-0.5 hover:bg-coast-sand"
     >
       {icon}
       {label}
@@ -266,12 +273,12 @@ function StatCard({
   detail: string;
 }) {
   return (
-    <article className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-soft">
+    <article className="brochure-card rounded-sm border border-coast-blue/12 p-4 shadow-brochure">
       <div className="flex items-center gap-2 text-coast-blue">
         {icon}
         <p className="text-xs font-black uppercase tracking-[0.1em]">{label}</p>
       </div>
-      <p className="mt-3 text-3xl font-black text-coast-slate">{value}</p>
+      <p className="mt-3 font-display text-3xl font-bold text-coast-ink">{value}</p>
       <p className="mt-1 text-sm font-semibold text-coast-slate/62">{detail}</p>
     </article>
   );

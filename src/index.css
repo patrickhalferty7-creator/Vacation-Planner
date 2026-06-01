@@ -13,11 +13,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
+  overflow-x: clip;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(245, 251, 250, 0.98)),
+    repeating-linear-gradient(90deg, rgba(25, 107, 133, 0.025) 0 1px, transparent 1px 8px);
 }
 
 button,
@@ -30,7 +35,8 @@ textarea {
 .leaflet-container {
   min-height: 620px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .activity-marker,
@@ -77,8 +83,33 @@ textarea {
 
 .hero-image-mask {
   background:
-    linear-gradient(90deg, rgba(22, 70, 90, 0.9), rgba(22, 70, 90, 0.5) 48%, rgba(22, 70, 90, 0.12)),
-    linear-gradient(180deg, rgba(22, 70, 90, 0.1), rgba(22, 70, 90, 0.5));
+    linear-gradient(90deg, rgba(12, 35, 43, 0.9), rgba(22, 70, 90, 0.56) 52%, rgba(22, 70, 90, 0.12)),
+    linear-gradient(180deg, rgba(22, 70, 90, 0.08), rgba(21, 42, 49, 0.72));
+}
+
+.brochure-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 242, 0.98)),
+    linear-gradient(135deg, rgba(214, 161, 76, 0.12), transparent 42%);
+}
+
+.travel-card-cover {
+  background-image:
+    linear-gradient(135deg, rgba(21, 42, 49, 0.18), rgba(255, 250, 242, 0.02)),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0 1px, transparent 1px 9px);
+}
+
+.editorial-rule {
+  position: relative;
+}
+
+.editorial-rule::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin-bottom: 16px;
+  background: #d6a14c;
 }
 
 @media (max-width: 768px) {
