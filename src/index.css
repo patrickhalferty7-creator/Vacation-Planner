@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #263942;
+  background: #fffaf2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.leaflet-container {
+  min-height: 620px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.activity-marker,
+.home-marker {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: white;
+  border: 3px solid white;
+  box-shadow: 0 10px 26px rgba(38, 57, 66, 0.24);
+  font-weight: 800;
+  font-size: 0.75rem;
+}
+
+.home-marker {
+  width: 44px;
+  height: 44px;
+  background: #16465a;
+  font-size: 1rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px;
+  min-width: 230px;
+}
+
+.popup-detail-button {
+  margin-top: 10px;
+  display: inline-flex;
+  border: 0;
+  border-radius: 6px;
+  background: #196b85;
+  color: white;
+  padding: 8px 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hero-image-mask {
+  background:
+    linear-gradient(90deg, rgba(22, 70, 90, 0.9), rgba(22, 70, 90, 0.5) 48%, rgba(22, 70, 90, 0.12)),
+    linear-gradient(180deg, rgba(22, 70, 90, 0.1), rgba(22, 70, 90, 0.5));
+}
+
+@media (max-width: 768px) {
+  .leaflet-container {
+    min-height: 520px;
+  }
+}
