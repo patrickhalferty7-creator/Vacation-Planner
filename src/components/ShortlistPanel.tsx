@@ -25,16 +25,16 @@ export function ShortlistPanel({ activities, onOpen, onRemove }: ShortlistPanelP
   return (
     <section id="shortlist" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Decision support"
-        title="Family shortlist"
-        description="Shortlist picks persist after refresh and keep drive time visible, so the group can quickly see whether the plan is becoming too drive-heavy."
+        eyebrow="Keepers"
+        title="Your shortlist"
+        description="Save the ideas that make people lean in. The summary keeps the mix honest: how many big days, how many easy local wins, and which interests are getting the spotlight."
       />
 
       <div className="grid gap-5 lg:grid-cols-[320px_minmax(0,1fr)]">
-        <aside className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
+        <aside className="brochure-card rounded-sm border border-coast-blue/12 p-4 shadow-sm">
           <div className="flex items-center gap-2">
             <Heart className="h-5 w-5 fill-coast-coral text-coast-coral" />
-            <h3 className="text-lg font-black text-coast-slate">Shortlist summary</h3>
+          <h3 className="font-display text-xl font-bold text-coast-ink">Shortlist summary</h3>
           </div>
           <div className="mt-4 grid grid-cols-3 gap-2 text-center">
             <SummaryNumber label="Selected" value={activities.length} />
@@ -64,7 +64,7 @@ export function ShortlistPanel({ activities, onOpen, onRemove }: ShortlistPanelP
 
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {activities.map((activity) => (
-            <article key={activity.id} className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
+            <article key={activity.id} className="rounded-sm border border-coast-blue/12 bg-white p-4 shadow-sm">
               <div className="flex items-start justify-between gap-3">
                 <button type="button" className="text-left" onClick={() => onOpen(activity)}>
                   <Badge tone={activity.driveTimeMinutes > 120 ? "coral" : activity.distanceBand === "In Pornic" ? "green" : "blue"}>

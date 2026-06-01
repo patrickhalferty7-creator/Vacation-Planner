@@ -87,10 +87,10 @@ export function SectionHeader({
   description: string;
 }) {
   return (
-    <div className="mb-6 max-w-3xl">
-      <p className="text-sm font-bold uppercase tracking-[0.12em] text-coast-coral">{eyebrow}</p>
-      <h2 className="mt-2 text-3xl font-black text-coast-slate md:text-4xl">{title}</h2>
-      <p className="mt-3 text-base leading-7 text-coast-slate/75">{description}</p>
+    <div className="editorial-rule mb-7 max-w-3xl">
+      <p className="text-xs font-black uppercase tracking-[0.18em] text-coast-coral">{eyebrow}</p>
+      <h2 className="mt-2 font-display text-4xl font-bold leading-tight text-coast-ink md:text-5xl">{title}</h2>
+      <p className="mt-3 max-w-2xl text-base leading-7 text-coast-slate/74">{description}</p>
     </div>
   );
 }

@@ -13,9 +13,9 @@ export function TopTenSection({ shortlistIds, onOpen, onToggleShortlist }: TopTe
   return (
     <section id="top-10" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Ranked for this family"
-        title="Top 10 recommendations"
-        description="Prioritized for a multi-generational group of 10 with teens, water lovers, hikers/runners, shoppers, wine/cider fans, history buffs, and coastal-town browsers."
+        eyebrow="Editor's shortlist"
+        title="Ten trips worth circling"
+        description="The strongest first-pass picks for a group of 10: spectacle, sea air, wine country, market mornings, fishing, sailing, shopping, and coastal towns that feel worth the car time."
       />
 
       <div className="grid gap-4 lg:grid-cols-2">

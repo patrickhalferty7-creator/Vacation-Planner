@@ -6,19 +6,19 @@ export function ItinerarySection() {
   return (
     <section id="itineraries" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Sample plans"
-        title="Suggested itineraries"
-        description="Static for now, but structured in day blocks so future drag-and-drop planning can slot in cleanly."
+        eyebrow="Trip rhythms"
+        title="Ready-made itineraries"
+        description="Starter arcs for different lengths and moods, balancing big coastal moments with lighter Pornic days so the week still feels like a holiday."
       />
 
       <div className="grid gap-5">
         {itineraries.map((itinerary) => (
-          <article key={itinerary.id} className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
+          <article key={itinerary.id} className="rounded-sm border border-coast-blue/12 bg-white p-4 shadow-sm">
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
               <div>
                 <div className="flex items-center gap-2 text-coast-blue">
                   <CalendarDays className="h-5 w-5" />
-                  <h3 className="text-xl font-black text-coast-slate">{itinerary.title}</h3>
+                  <h3 className="font-display text-2xl font-bold text-coast-ink">{itinerary.title}</h3>
                 </div>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-coast-slate/68">{itinerary.description}</p>
               </div>
@@ -27,7 +27,7 @@ export function ItinerarySection() {
 
             <div className="mt-5 grid gap-3 lg:grid-cols-2">
               {itinerary.days.map((day) => (
-                <div key={`${itinerary.id}-${day.day}`} className="rounded-lg border border-coast-blue/10 bg-coast-foam p-4">
+                <div key={`${itinerary.id}-${day.day}`} className="rounded-sm border border-coast-blue/10 bg-coast-foam p-4">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2">
                       <GripVertical className="h-4 w-4 text-coast-slate/35" />

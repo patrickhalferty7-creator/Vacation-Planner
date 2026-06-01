@@ -36,9 +36,9 @@ export function ComparisonMatrix({ activities, shortlistIds, onOpen, onToggleSho
   return (
     <section id="compare" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Fast group decisions"
+        eyebrow="Worth the drive"
         title="Drive time vs must-do"
-        description="A 2x2 view that makes proximity to Pornic impossible to miss, helping the family decide what earns a car day."
+        description="The quick gut-check for group debate: what is close and irresistible, what is easy filler, and what deserves a proper car day from Pornic."
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
@@ -48,7 +48,7 @@ export function ComparisonMatrix({ activities, shortlistIds, onOpen, onToggleSho
             .sort((a, b) => b.mustDoScore - a.mustDoScore || a.driveTimeMinutes - b.driveTimeMinutes);
 
           return (
-            <article key={bucket.title} className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
+            <article key={bucket.title} className="rounded-sm border border-coast-blue/12 bg-white p-4 shadow-sm">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <Badge tone={bucket.tone}>{bucket.title}</Badge>
@@ -63,7 +63,7 @@ export function ComparisonMatrix({ activities, shortlistIds, onOpen, onToggleSho
                 {bucketActivities.map((activity) => {
                   const shortlisted = shortlistIds.includes(activity.id);
                   return (
-                    <div key={activity.id} className="rounded-md border border-coast-blue/10 bg-coast-foam p-3">
+                    <div key={activity.id} className="rounded-sm border border-coast-blue/10 bg-coast-foam p-3">
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                         <button type="button" className="text-left" onClick={() => onOpen(activity)}>
                           <Badge tone={activity.driveTimeMinutes > 120 ? "coral" : activity.distanceBand === "In Pornic" ? "green" : "blue"}>

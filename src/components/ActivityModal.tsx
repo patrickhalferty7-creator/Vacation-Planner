@@ -33,7 +33,7 @@ export function ActivityModal({ activity, shortlisted, onClose, onToggleShortlis
               <Clock3 className="mr-1 h-3.5 w-3.5" />
               {formatDriveBadge(activity)}
             </Badge>
-            <h2 id="activity-dialog-title" className="mt-2 text-2xl font-black leading-tight text-coast-slate">
+            <h2 id="activity-dialog-title" className="mt-2 font-display text-3xl font-bold leading-tight text-coast-ink">
               {activity.name}
             </h2>
           </div>
@@ -54,13 +54,13 @@ export function ActivityModal({ activity, shortlisted, onClose, onToggleShortlis
 
             <p className="mt-4 text-lg leading-8 text-coast-slate/78">{activity.shortDescription}</p>
 
-            <section className="mt-5 rounded-lg bg-white p-4 shadow-sm">
-              <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-blue">Why we think you'll like it</h3>
+            <section className="brochure-card mt-5 rounded-sm border border-coast-blue/10 p-4 shadow-sm">
+              <h3 className="text-sm font-black uppercase tracking-[0.12em] text-coast-coral">Why we think you'll love it</h3>
               <p className="mt-3 leading-7 text-coast-slate/78">{activity.whyWeThinkYoullLikeIt}</p>
             </section>
 
             {activity.worthTheDriveNote ? (
-              <section className="mt-4 rounded-lg border border-coast-coral/25 bg-[#fff3ed] p-4">
+              <section className="mt-4 rounded-sm border border-coast-coral/25 bg-[#fff3ed] p-4">
                 <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-coral">Why it's worth the drive</h3>
                 <p className="mt-3 leading-7 text-coast-slate/78">{activity.worthTheDriveNote}</p>
               </section>
@@ -69,12 +69,12 @@ export function ActivityModal({ activity, shortlisted, onClose, onToggleShortlis
             <section className="mt-5 grid gap-3 sm:grid-cols-3">
               <ScorePanel label="Must-do" value={activity.mustDoScore} />
               <ScorePanel label="Teen appeal" value={activity.teenAppealScore} />
-              <ScorePanel label="All-ages fit" value={activity.allAgesScore} />
+              <ScorePanel label="Group pull" value={activity.allAgesScore} />
             </section>
           </div>
 
           <aside className="space-y-4">
-            <section className="rounded-lg bg-white p-4 shadow-sm">
+            <section className="rounded-sm bg-white p-4 shadow-sm">
               <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-slate/55">From Pornic</h3>
               <dl className="mt-4 grid gap-4">
                 <Detail label="Drive time" value={activity.driveTimeLabel} />
@@ -86,17 +86,16 @@ export function ActivityModal({ activity, shortlisted, onClose, onToggleShortlis
               </dl>
             </section>
 
-            <section className="rounded-lg bg-white p-4 shadow-sm">
-              <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-slate/55">Planning fit</h3>
+            <section className="rounded-sm bg-white p-4 shadow-sm">
+              <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-slate/55">Make it sing</h3>
               <div className="mt-4 grid gap-3">
                 <Detail label="Suggested duration" value={activity.estimatedDuration} />
                 <Detail label="Effort level" value={activity.effortLevel} />
                 <Detail label="Rainy-day suitability" value={activity.rainyDayFriendly ? "Good option" : "Best in dry weather"} />
-                <Detail label="Grandparents" value={activity.grandparentFriendly ? "Suitable with normal pacing" : "Better as an active subgroup"} />
               </div>
             </section>
 
-            <section className="rounded-lg bg-white p-4 shadow-sm">
+            <section className="rounded-sm bg-white p-4 shadow-sm">
               <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-slate/55">Pairs well with</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {(activity.pairsWellWith ?? ["Local Pornic time"]).map((pairing) => (
@@ -107,7 +106,7 @@ export function ActivityModal({ activity, shortlisted, onClose, onToggleShortlis
               </div>
             </section>
 
-            <section className="rounded-lg bg-white p-4 shadow-sm">
+            <section className="rounded-sm bg-white p-4 shadow-sm">
               <h3 className="text-sm font-black uppercase tracking-[0.1em] text-coast-slate/55">Watch-outs</h3>
               <ul className="mt-3 space-y-2 text-sm leading-6 text-coast-slate/78">
                 {activity.watchOuts.map((watchOut) => (
@@ -160,8 +159,8 @@ function Detail({ label, value }: { label: string; value: string }) {
 
 function ScorePanel({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-lg bg-coast-foam p-4">
-      <p className="text-3xl font-black text-coast-blue">{value}/5</p>
+    <div className="rounded-sm bg-coast-foam p-4">
+      <p className="font-display text-3xl font-bold text-coast-blue">{value}/5</p>
       <p className="mt-1 text-sm font-bold text-coast-slate/65">{label}</p>
     </div>
   );

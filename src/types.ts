@@ -33,7 +33,6 @@ export type Activity = {
   allAgesScore: number;
   effortLevel: EffortLevel;
   rainyDayFriendly: boolean;
-  grandparentFriendly: boolean;
   estimatedDuration: string;
   bestTimeOfDay: string;
   bestFor: string[];
@@ -41,6 +40,7 @@ export type Activity = {
   whyWeThinkYoullLikeIt: string;
   watchOuts: string[];
   googleMapsQuery: string;
+  imageUrl?: string;
 };
 
 export type ItineraryDay = {
@@ -66,7 +66,6 @@ export type Filters = {
   minMustDo: number;
   minTeenAppeal: number;
   rainyDayOnly: boolean;
-  grandparentFriendlyOnly: boolean;
   effortLevels: EffortLevel[];
   wineCider: boolean;
   waterActivities: boolean;

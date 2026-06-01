@@ -53,7 +53,6 @@ export const filterActivities = (activities: Activity[], filters: Filters) => {
     if (activity.mustDoScore < filters.minMustDo) return false;
     if (activity.teenAppealScore < filters.minTeenAppeal) return false;
     if (filters.rainyDayOnly && !activity.rainyDayFriendly) return false;
-    if (filters.grandparentFriendlyOnly && !activity.grandparentFriendly) return false;
     if (filters.effortLevels.length && !filters.effortLevels.includes(activity.effortLevel)) return false;
     const activeShortcutCategories: string[] = [];
     if (filters.wineCider) activeShortcutCategories.push("Wine", "Cider", "Food");

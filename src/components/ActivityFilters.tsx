@@ -22,7 +22,7 @@ const sortOptions: Array<{ value: SortOption; label: string }> = [
   { value: "highestWithinHour", label: "Highest rated within 1 hour" },
   { value: "teenWithinHour", label: "Best teen appeal within 1 hour" },
   { value: "teen", label: "Highest teen appeal" },
-  { value: "allAges", label: "Highest all-ages appeal" },
+  { value: "allAges", label: "Strongest group pull" },
   { value: "rainy", label: "Best rainy-day options" },
 ];
 
@@ -68,7 +68,6 @@ export function ActivityFilters({
       minMustDo: 1,
       minTeenAppeal: 1,
       rainyDayOnly: false,
-      grandparentFriendlyOnly: false,
       effortLevels: [],
       wineCider: false,
       waterActivities: false,
@@ -78,14 +77,16 @@ export function ActivityFilters({
   };
 
   return (
-    <section className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm" aria-label="Activity filters">
+    <section className="brochure-card rounded-sm border border-coast-blue/12 p-4 shadow-sm" aria-label="Activity filters">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-5 w-5 text-coast-blue" />
-            <h3 className="text-lg font-black text-coast-slate">Activity Explorer</h3>
+            <h3 className="font-display text-2xl font-bold text-coast-ink">Find the right day</h3>
           </div>
-          <p className="mt-1 text-sm font-semibold text-coast-slate/60">{resultCount} activities match these filters</p>
+          <p className="mt-1 text-sm font-semibold text-coast-slate/60">
+            {resultCount} ideas match the current drive time, mood, and weather.
+          </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">
           <label className="relative min-w-[240px]">
@@ -94,7 +95,7 @@ export function ActivityFilters({
             <input
               value={filters.search}
               onChange={(event) => onFiltersChange({ ...filters, search: event.target.value })}
-              placeholder="Search fishing, wine, teens..."
+              placeholder="Search oysters, castles, sailing..."
               className="h-11 w-full rounded-md border border-coast-blue/15 bg-coast-foam pl-10 pr-3 text-sm font-semibold text-coast-slate outline-none transition focus:border-coast-blue focus:ring-2 focus:ring-coast-blue/20"
             />
           </label>
@@ -182,16 +183,11 @@ export function ActivityFilters({
             checked={filters.rainyDayOnly}
             onChange={(checked) => onFiltersChange({ ...filters, rainyDayOnly: checked })}
           />
-          <Toggle
-            label="Suitable for grandparents"
-            checked={filters.grandparentFriendlyOnly}
-            onChange={(checked) => onFiltersChange({ ...filters, grandparentFriendlyOnly: checked })}
-          />
         </div>
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-2">
-        <Badge tone="sand">Interest shortcuts</Badge>
+        <Badge tone="sand">Mood shortcuts</Badge>
         <Toggle
           label="Wine/cider"
           checked={filters.wineCider}

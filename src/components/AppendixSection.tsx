@@ -34,9 +34,9 @@ export function AppendixSection({ activities, onOpen }: AppendixSectionProps) {
   return (
     <section id="appendix" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Backup bank"
-        title="Appendix ideas by interest"
-        description="A quick genre scan for filling gaps, splitting the group, or rescuing a weather-shifted day."
+        eyebrow="More to tempt you"
+        title="Ideas by mood"
+        description="A scannable bank for filling gaps, splitting into smaller crews, or swapping plans when the weather changes."
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -46,7 +46,7 @@ export function AppendixSection({ activities, onOpen }: AppendixSectionProps) {
             .sort((a, b) => a.driveTimeMinutes - b.driveTimeMinutes || b.mustDoScore - a.mustDoScore);
 
           return (
-            <article key={genre.title} className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
+            <article key={genre.title} className="rounded-sm border border-coast-blue/12 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-lg font-black text-coast-slate">{genre.title}</h3>
                 <Badge tone="sand">{matches.length}</Badge>

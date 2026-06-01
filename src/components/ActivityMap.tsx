@@ -143,13 +143,13 @@ export function ActivityMap({ activities, onOpenActivity }: ActivityMapProps) {
   return (
     <section id="map" className="scroll-mt-24 py-12">
       <SectionHeader
-        eyebrow="Map-first planning"
-        title="Activities around Pornic"
-        description="Pornic is the fixed home base. Filtered explorer results appear here too, with drive-time markers and optional rough drive-time rings."
+        eyebrow="From the home base"
+        title="Map the coast from Pornic"
+        description="Every marker starts from Pornic, so the romance of the idea and the reality of the drive stay on the same page."
       />
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <Badge tone="sand">Map category filter</Badge>
+        <Badge tone="sand">Map mood filter</Badge>
         {allCategories.map((category) => (
           <button
             key={category}
@@ -177,16 +177,16 @@ export function ActivityMap({ activities, onOpenActivity }: ActivityMapProps) {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <div className="overflow-hidden rounded-lg border border-coast-blue/12 bg-white p-2 shadow-soft">
+        <div className="overflow-hidden rounded-sm border border-coast-blue/12 bg-white p-2 shadow-soft">
           <div
             ref={containerRef}
-            className="h-[520px] md:h-[620px] w-full rounded-lg"
+            className="h-[520px] w-full rounded-sm md:h-[620px]"
             aria-label="Interactive map of activities near Pornic"
           />
         </div>
 
-        <aside className="rounded-lg border border-coast-blue/12 bg-white p-4 shadow-sm">
-          <h3 className="text-lg font-black text-coast-slate">Legend</h3>
+        <aside className="brochure-card rounded-sm border border-coast-blue/12 p-4 shadow-sm">
+          <h3 className="font-display text-2xl font-bold text-coast-ink">Legend</h3>
           <p className="mt-1 text-sm leading-6 text-coast-slate/65">
             Marker numbers show approximate drive minutes from Pornic. The home marker is Pornic.
           </p>
@@ -211,7 +211,7 @@ export function ActivityMap({ activities, onOpenActivity }: ActivityMapProps) {
               ))}
             </div>
           </div>
-          <div className="mt-5 rounded-md bg-coast-foam p-3 text-sm font-semibold leading-6 text-coast-slate/70">
+          <div className="mt-5 rounded-sm bg-coast-foam p-3 text-sm font-semibold leading-6 text-coast-slate/70">
             Showing {visibleActivities.length} activity markers after explorer and map filters.
           </div>
         </aside>
