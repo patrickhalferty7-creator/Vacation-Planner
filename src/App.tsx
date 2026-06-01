@@ -131,7 +131,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mx-auto -mt-8 grid max-w-7xl gap-3 px-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="relative z-10 mx-auto -mt-8 grid max-w-7xl gap-3 px-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard
               icon={<Compass className="h-5 w-5" />}
               label="Activities"
