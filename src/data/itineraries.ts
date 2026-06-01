@@ -91,7 +91,7 @@ export const itineraries: Itinerary[] = [
         afternoon: "Salt Marshes and Le Croisic add-on (1 hr to 1 hr 10 min from Pornic)",
         evening: "Seafood dinner on the peninsula",
         driveIntensity: "Moderate peninsula loop",
-        notes: "This day works for grandparents because stops are compact and café-friendly.",
+        notes: "This day works because stops are compact, café-friendly, and easy to pace as a group.",
       },
       {
         day: 6,
@@ -170,7 +170,7 @@ export const itineraries: Itinerary[] = [
         afternoon: "La Baule or paddleboarding (30-50 min from Pornic)",
         evening: "Casual beach dinner",
         driveIntensity: "Active teen-forward day",
-        notes: "Let grandparents opt into the promenade version.",
+        notes: "Let non-participants opt into the promenade version.",
       },
       {
         day: 8,
@@ -264,7 +264,7 @@ export const itineraries: Itinerary[] = [
         afternoon: "Pornic Old Port snacks (In Pornic)",
         evening: "Coastal trail sunset walk (In Pornic)",
         driveIntensity: "Close active day",
-        notes: "Good day for grandparents to choose an easier parallel plan.",
+        notes: "Good day for anyone who wants an easier parallel plan.",
       },
       {
         day: 4,
@@ -277,9 +277,9 @@ export const itineraries: Itinerary[] = [
     ],
   },
   {
-    id: "grandparents-friendly",
-    title: "Low-effort / grandparents-friendly version",
-    description: "Keeps drive times visible, limits physical strain, and favors cafés, seated visits, and scenic pacing.",
+    id: "easy-logistics",
+    title: "Low-effort / easy-logistics version",
+    description: "Keeps drive times visible and favors scenic pacing, great meals, and compact stops when the group wants a lighter day.",
     days: [
       {
         day: 1,
